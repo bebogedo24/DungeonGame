@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://greensquare.jpg" type="Texture" id=1]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+render_priority = 0
+blend_mode = 0
+light_mode = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="StaticBody2D" type="Node2D" index="0"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+material = SubResource( 1 )
+position = Vector2( 512.446, 567.964 )
+scale = Vector2( 15.9144, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
+
+position = Vector2( 0.045289, -1.46212 )
+scale = Vector2( 0.106822, 0.10845 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+
+position = Vector2( 0.0191803, -0.67151 )
+scale = Vector2( 3.21217, 3.25316 )
+shape = SubResource( 2 )
+disabled = true
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+
+shape = SubResource( 3 )
+
+[node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 321.001, 453.001 )
+
+
